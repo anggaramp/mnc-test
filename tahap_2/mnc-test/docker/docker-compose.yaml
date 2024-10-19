@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mnc-db:
+    container_name: mnc-db
+    platform: linux/x86_64
+    image: postgres:14
+    restart: always
+    environment:
+        POSTGRES_PASSWORD: .mnc_test!
+        POSTGRES_USER: mnc_test
+        POSTGRES_DB: mnc_test
+    volumes:
+      - ./postgres:/var/lib/mysql
+    ports:
+        - "10090:5432"

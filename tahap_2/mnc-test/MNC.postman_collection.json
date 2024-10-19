@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "6f735f5d-2380-4d90-ac92-c554361edbf5",
+		"name": "MNC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37909257"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Migration",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Guntur\",\n    \"last_name\": \"Saputro\",\n    \"phone_number\": \"0811255501\",\n    \"address\": \"Jl. Kebon Sirih No. 1\",\n    \"pin\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Guntur\",\n    \"last_name\": \"Saputro\",\n    \"address\": \"Jl. Kebon Sirih No. 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/profile",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\": \"0811255501\",\n    \"pin\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiIxODc5NDg0Ni0wZWFiLTQ4ODAtYWNlOC05NzM1NDZkNDFiZWIiLCJmaXJzdF9uYW1lIjoiR3VudHVyIiwibGFzdF9uYW1lIjoiU2FwdXRybyIsInBob25lX251bWJlciI6IjA4MTEyNTU1MDEiLCJwaW4iOiIxMjM0NTYiLCJhZGRyZXNzIjoiSmwuIEtlYm9uIFNpcmloIE5vLiAxIiwiY3JlYXRlZF9kYXRlIjoiMjAyNC0xMC0xOVQxNjoxNTo0My40NTgzODcrMDc6MDAiLCJ1cGRhdGVfZGF0ZSI6IjIwMjQtMTAtMTlUMTY6MTU6NDMuNDU4Mzg3KzA3OjAwIn0sImV4cCI6MTcyOTMzMTA2N30.2sviP4rMmFhk75vZpGtJ_Ag-Y9ytgs9KuQAm7hy5768",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Top Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 500000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/topup",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"topup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 100000,\n    \"remarks\": \"Pulsa Telkomsel 100k\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/pay",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"target_user\": \"b63c5ef8-e327-406b-8cb1-d294639efe7b\",\n    \"amount\": 100000,\n    \"remarks\": \"Pulsa Telkomsel 100k\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/transfer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactions",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiJjMWY1MGY1Yi01M2ExLTQzODctYWE1NS1hMGY4MDhhZWYzMmUiLCJmaXJzdF9uYW1lIjoiR3VudHVyIiwibGFzdF9uYW1lIjoiU2FwdXRybyIsInBob25lX251bWJlciI6IjA4MTEyNTU1MDEiLCJwaW4iOiIxMjM0NTYiLCJhZGRyZXNzIjoiSmwuIEtlYm9uIFNpcmloIE5vLiAxIiwiY3JlYXRlZF9kYXRlIjoiMjAyNC0xMC0xOVQxNjo1Nzo0OC4zODc2MzMrMDc6MDAiLCJ1cGRhdGVfZGF0ZSI6IjIwMjQtMTAtMTlUMTY6NTc6NDguMzg3NjMzKzA3OjAwIn0sImV4cCI6MTcyOTMzNjA2N30.G2inZPOHbbcvJNjZ1Xskz0JyVq_j5jOqN86kHsOy7nI",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
