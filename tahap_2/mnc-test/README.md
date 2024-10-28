@@ -23,7 +23,7 @@ docker-compose up -d
 # update connection DB on main.go 
 dsn = "host=0.0.0.0 port=10090 user=mnc_test password=.mnc_test! dbname=mnc_test sslmode=disable"
 
-# update output path on main.go 
+# update output path on main.go if you move log to another folder
 "outputPaths": ["./logs/app.log"],
 "errorOutputPaths": ["./logs/app.log"],
 
